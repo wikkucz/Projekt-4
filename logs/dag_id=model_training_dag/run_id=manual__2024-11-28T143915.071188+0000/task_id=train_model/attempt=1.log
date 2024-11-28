@@ -1,0 +1,21 @@
+[2024-11-28T14:39:17.390+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-28T14:39:17.407+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: model_training_dag.train_model manual__2024-11-28T14:39:15.071188+00:00 [queued]>
+[2024-11-28T14:39:17.415+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: model_training_dag.train_model manual__2024-11-28T14:39:15.071188+00:00 [queued]>
+[2024-11-28T14:39:17.416+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-28T14:39:17.428+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): train_model> on 2024-11-28 14:39:15.071188+00:00
+[2024-11-28T14:39:17.437+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=220) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-28T14:39:17.439+0000] {standard_task_runner.py:72} INFO - Started process 227 to run task
+[2024-11-28T14:39:17.439+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'model_training_dag', 'train_model', 'manual__2024-11-28T14:39:15.071188+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/model_training_dag.py', '--cfg-path', '/tmp/tmpye0gg4m7']
+[2024-11-28T14:39:17.441+0000] {standard_task_runner.py:105} INFO - Job 68: Subtask train_model
+[2024-11-28T14:39:17.494+0000] {task_command.py:467} INFO - Running <TaskInstance: model_training_dag.train_model manual__2024-11-28T14:39:15.071188+00:00 [running]> on host 60ea90825a9a
+[2024-11-28T14:39:17.581+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='model_training_dag' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2024-11-28T14:39:15.071188+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-28T14:39:15.071188+00:00'
+[2024-11-28T14:39:17.582+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-28T14:41:21.432+0000] {model_training_dag.py:39} INFO - Model trained successfully with accuracy: 0.9511201629327902
+[2024-11-28T14:41:21.432+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-28T14:41:21.443+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-28T14:41:21.443+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=model_training_dag, task_id=train_model, run_id=manual__2024-11-28T14:39:15.071188+00:00, execution_date=20241128T143915, start_date=20241128T143917, end_date=20241128T144121
+[2024-11-28T14:41:21.499+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-28T14:41:21.522+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-28T14:41:21.527+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
